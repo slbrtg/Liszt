@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "741841777775",
+    "firebase_url": "https://to-do-liszt.firebaseio.com",
+    "project_id": "to-do-liszt",
+    "storage_bucket": "to-do-liszt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741841777775:android:d8be2f80f9af11c6",
+        "android_client_info": {
+          "package_name": "com.todo.liszt.todoliszt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741841777775-h2f7jhelauc4q1ued4a9dj1bo7opvmjf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.todo.liszt.todoliszt",
+            "certificate_hash": "86e02ea7cc8cbf22d77190ed47fb5a9573a41333"
+          }
+        },
+        {
+          "client_id": "741841777775-fmnhdqaa3sqnfqq63pi72d07hhc38ear.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB7KHQhVqMA3D7goKPtpws0lehnTSptGQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741841777775-fmnhdqaa3sqnfqq63pi72d07hhc38ear.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
