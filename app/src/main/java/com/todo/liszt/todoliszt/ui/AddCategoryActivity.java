@@ -36,7 +36,8 @@ public class AddCategoryActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_add_category);
         ButterKnife.bind(this);
 
-        mButtonSubmitCategory.setOnClickListener(this);
+        mButtonSubmitCategory = (Button) findViewById(R.id.newCategoryButton);
+        //mButtonSubmitCategory.setOnClickListener(this);
     }
 
     @Override
