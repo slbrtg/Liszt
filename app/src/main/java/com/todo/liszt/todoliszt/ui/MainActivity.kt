@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         mCategoryRecyclerView = findViewById(R.id.categoryRecyclerView) as RecyclerView
-        mCategoryRecyclerView.setHasFixedSize(false)
+        mCategoryRecyclerView.setHasFixedSize(true)
         mCategoryRecyclerView.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, true)
         mCategoryRecyclerView.adapter = mFirebaseAdapter
     }
