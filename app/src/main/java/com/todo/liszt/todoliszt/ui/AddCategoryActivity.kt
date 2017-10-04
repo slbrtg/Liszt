@@ -35,6 +35,7 @@ class AddCategoryActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_category)
 
+
         mButtonSubmitCategory = findViewById<Button>(R.id.addNewCatButton)
         mInputCategoryName = findViewById<EditText>(R.id.inputCatNameEditText)
         mInputCategoryDescription = findViewById<EditText>(R.id.inputCatDescriptionEditText)
@@ -48,14 +49,14 @@ class AddCategoryActivity : AppCompatActivity(), View.OnClickListener {
             val description = mInputCategoryDescription.text.toString()
 
             val newCategory = Category(name, description)
-            saveLocationToFirebase(newCategory)
+            saveCategoryToFirebase(newCategory)
             val intent = Intent(this@AddCategoryActivity, MainActivity::class.java)
             startActivity(intent)
 
         }
     }
 
-    fun saveLocationToFirebase(newCategory: Category) {
+    fun saveCategoryToFirebase(newCategory: Category) {
         mCategoryReference.push().setValue(newCategory)
     }
 
