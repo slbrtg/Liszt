@@ -7,12 +7,14 @@ public class Task {
 
     String name;
     String description;
+    String catId;
 
     public Task() { }
 
-    public Task(String name, String description) {
+    public Task(String name, String description, String catId) {
         this.name = name;
         this.description = description;
+        this.catId = catId;
     }
 
     public String getName() {
@@ -21,6 +23,10 @@ public class Task {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getCatId() {
+        return catId;
     }
 
 

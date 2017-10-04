@@ -18,7 +18,7 @@ import org.parceler.Parcels
 
 class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mTaskReference: DatabaseReference
-    internal lateinit var mCategory: Category
+    internal lateinit var mCat: Category
     internal lateinit var mInputTaskNameEditText: EditText
     internal lateinit var mInputTaskDescriptionEditText: EditText
     internal lateinit var mAddNewTaskButton: Button
@@ -33,7 +33,7 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_task)
 
-        mCategory = Parcels.unwrap<Category>(intent.getParcelableExtra<Parcelable>("category"))
+        mCat = Parcels.unwrap<Category>(intent.getParcelableExtra<Parcelable>("category"))
 
         mInputTaskNameEditText = findViewById(R.id.inputTaskNameEditText)
         mInputTaskDescriptionEditText = findViewById(R.id.inputTaskDescriptionEditText)
@@ -46,10 +46,10 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
         if (v == mAddNewTaskButton) {
             val name = mInputTaskNameEditText.text.toString()
             val description = mInputTaskDescriptionEditText.text.toString()
-            val newTask = Task(name, description)
+            val newTask = Task(name, description, mCat.pushId)
             saveTaskToFirebase(newTask)
             val intent = Intent(this@AddTaskActivity, CategoryDetailActivity::class.java)
-            intent.putExtra("category", Parcels.wrap(mCategory))
+            intent.putExtra("category", Parcels.wrap(mCat))
             startActivity(intent)
         }
     }

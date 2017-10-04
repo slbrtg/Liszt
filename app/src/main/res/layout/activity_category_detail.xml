@@ -7,30 +7,33 @@
     tools:context="com.todo.liszt.todoliszt.ui.MainActivity">
 
     <TextView
-        android:layout_width="194dp"
-        android:layout_height="25dp"
         android:id="@+id/catName"
-        android:text="Category Name"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="254dp"
+        android:layout_height="74dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Category Name"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/catDescription"
         android:layout_width="255dp"
         android:layout_height="47dp"
-        android:id="@+id/catDescription"
-        android:text="Category Description"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="44dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/taskRecyclerView"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/categoryName"
+        android:text="Category Description"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/taskRecyclerView"
         app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryName"
         app:layout_constraintVertical_bias="0.505" />
 
     <Button
@@ -52,14 +55,13 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
-        android:layout_width="313dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="106dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/newTaskButton"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_width="347dp"
+        android:layout_height="275dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/addNewTaskButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
