@@ -40,6 +40,7 @@ class CategoryDetailActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         if (v == mAddNewTaskButton) {
             val intent = Intent(this@CategoryDetailActivity, AddTaskActivity::class.java)
+            intent.putExtra("category", Parcels.wrap(mCategory))
             startActivity(intent)
         }
     }
