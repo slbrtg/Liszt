@@ -7,12 +7,14 @@ public class Category {
 
     String name;
     String description;
+    String pushId;
 
     public Category() { }
 
-    public Category(String name, String description) {
+    public Category(String name, String description, String pushId) {
         this.name = name;
         this.description = description;
+        this.pushId = pushId;
     }
 
     public String getName() {
@@ -21,6 +23,14 @@ public class Category {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 

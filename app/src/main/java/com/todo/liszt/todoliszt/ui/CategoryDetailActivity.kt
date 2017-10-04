@@ -2,7 +2,6 @@ package com.todo.liszt.todoliszt.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 
 import com.todo.liszt.todoliszt.R

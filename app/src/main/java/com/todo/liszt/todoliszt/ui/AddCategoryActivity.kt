@@ -45,10 +45,11 @@ class AddCategoryActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         if (v === mButtonSubmitCategory) {
+            val pushId = mCategoryReference.push().key
             val name = mInputCategoryName.text.toString()
             val description = mInputCategoryDescription.text.toString()
 
-            val newCategory = Category(name, description)
+            val newCategory = Category(name, description, pushId)
             saveCategoryToFirebase(newCategory)
             val intent = Intent(this@AddCategoryActivity, MainActivity::class.java)
             startActivity(intent)
@@ -57,7 +58,7 @@ class AddCategoryActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun saveCategoryToFirebase(newCategory: Category) {
-        mCategoryReference.push().setValue(newCategory)
+        mCategoryReference.child(newCategory.pushId).setValue(newCategory)
     }
 
 }
