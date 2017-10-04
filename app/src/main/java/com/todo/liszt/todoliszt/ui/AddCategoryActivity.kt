@@ -35,9 +35,9 @@ class AddCategoryActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_category)
 
-        mButtonSubmitCategory = findViewById(R.id.addNewCatButton) as Button
-        mInputCategoryName = findViewById(R.id.inputCatNameEditText) as EditText
-        mInputCategoryDescription = findViewById(R.id.inputCatDescriptionEditText) as EditText
+        mButtonSubmitCategory = findViewById<Button>(R.id.addNewCatButton)
+        mInputCategoryName = findViewById<EditText>(R.id.inputCatNameEditText)
+        mInputCategoryDescription = findViewById<EditText>(R.id.inputCatDescriptionEditText)
 
         mButtonSubmitCategory.setOnClickListener(this)
     }

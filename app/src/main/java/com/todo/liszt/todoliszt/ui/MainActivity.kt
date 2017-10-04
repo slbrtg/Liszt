@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 .getReference(Constants.FIREBASE_CHILD_CATEGORY)
         setUpFirebaseAdapter()
 
-        mNewCategoryButton = findViewById(R.id.newCategoryButton) as Button
+        mNewCategoryButton = findViewById<Button>(R.id.newCategoryButton)
         mNewCategoryButton.setOnClickListener(this)
 
     }
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 viewHolder.bindCategory(model)
             }
         }
-        mCategoryRecyclerView = findViewById(R.id.categoryRecyclerView) as RecyclerView
+        mCategoryRecyclerView = findViewById<RecyclerView>(R.id.categoryRecyclerView)
         mCategoryRecyclerView.setHasFixedSize(true)
         mCategoryRecyclerView.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, true)
         mCategoryRecyclerView.adapter = mFirebaseAdapter
