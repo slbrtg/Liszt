@@ -55,6 +55,6 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun saveTaskToFirebase(newTask: Task) {
-        mTaskReference.push().setValue(newTask)
+        mTaskReference.child(mCat.pushId).push().setValue(newTask)
     }
 }
