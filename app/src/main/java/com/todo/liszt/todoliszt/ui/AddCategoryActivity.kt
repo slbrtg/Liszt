@@ -59,6 +59,15 @@ class AddCategoryActivity : AppCompatActivity(), View.OnClickListener {
 
     fun saveCategoryToFirebase(newCategory: Category) {
         mCategoryReference.child(newCategory.pushId).setValue(newCategory)
+
+        // Test Code for saving catKeys to user profiles
+        // The following 2 lines create the map that will be added to the users node
+        //var catKey = mutableMapOf<String, Any>()
+        //catKey[newCategory.pushId] = true
+
+
+        // Pushes the map to a child called catKeys in the user's node
+        // mCategoryReference.child(newCategory.pushId).child("catKeys").updateChildren(catKey)
     }
 
 }
