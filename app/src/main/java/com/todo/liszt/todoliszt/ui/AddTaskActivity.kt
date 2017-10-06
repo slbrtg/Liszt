@@ -48,6 +48,7 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
             val description = mInputTaskDescriptionEditText.text.toString()
             val newTask = Task(name, description, mCat.pushId)
             saveTaskToFirebase(newTask)
+
             val intent = Intent(this@AddTaskActivity, CategoryDetailActivity::class.java)
             intent.putExtra("category", Parcels.wrap(mCat))
             startActivity(intent)
@@ -55,6 +56,6 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun saveTaskToFirebase(newTask: Task) {
-        mTaskReference.push().setValue(newTask)
+        mTaskReference.child(mCat.pushId).push().setValue(newTask)
     }
 }

@@ -13,30 +13,29 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.todo.liszt.todoliszt.Constants
 import com.todo.liszt.todoliszt.R
-import com.todo.liszt.todoliszt.models.Category
-import com.todo.liszt.todoliszt.ui.CategoryDetailActivity
-
+import com.todo.liszt.todoliszt.models.Task
 import org.parceler.Parcels
-
 import java.lang.reflect.Array
 import java.util.ArrayList
 
-class FirebaseCategoryViewHolder(private var mView: View) : RecyclerView.ViewHolder(mView), View.OnClickListener {
-    private var mContext: Context = mView.context
-    val categories = ArrayList<Category>()
+class FirebaseTaskViewHolder(private val mView: View) : RecyclerView.ViewHolder(mView), View.OnClickListener {
+    private val mContext: Context = mView.context
+    val categories = ArrayList<Task>()
+    val testString: String = "test"
     val ref = FirebaseDatabase
             .getInstance()
-            .getReference(Constants.FIREBASE_CHILD_CATEGORY)!!
+            .getReference(Constants.FIREBASE_CHILD_TASK)!!
 
     init {
         mView.setOnClickListener(this)
     }
 
-
-    fun bindCategory(category: Category) {
-        val categoryGridItem = mView.findViewById<TextView>(R.id.categoryGridItem)
-        categoryGridItem.text = category.name
+    fun bindTask(task: Task) {
+        val taskListItem = mView.findViewById<TextView>(R.id.taskListItem)
+        taskListItem.text = task.name
     }
+
+
 
     override fun onClick(view: View) {
 
@@ -44,12 +43,12 @@ class FirebaseCategoryViewHolder(private var mView: View) : RecyclerView.ViewHol
 
             ref.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    dataSnapshot.children.mapTo(categories) { it.getValue(Category::class.java) }
-                    val itemPosition : Int = layoutPosition
-                    val category : Category = categories[itemPosition]
-                    val intent = Intent(mContext, CategoryDetailActivity::class.java)
-                    intent.putExtra("category", Parcels.wrap(category))
-                    mContext.startActivity(intent)
+                    dataSnapshot.children.mapTo(categories) { it.getValue(Task::class.java) }
+//                    val itemPosition : Int = layoutPosition
+//                    val category : Task = categories[itemPosition]
+//                    val intent = Intent(mContext, TaskDetailActivity::class.java)
+//                    intent.putExtra("category", Parcels.wrap(category))
+//                    mContext.startActivity(intent)
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
