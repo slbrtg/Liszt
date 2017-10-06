@@ -54,11 +54,11 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
-        android:layout_width="378dp"
+        android:layout_width="0dp"
         android:layout_height="249dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/addNewTaskButton"
         app:layout_constraintEnd_toEndOf="parent"
