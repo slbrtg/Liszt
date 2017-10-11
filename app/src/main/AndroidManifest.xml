@@ -11,16 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.CreateAccountActivity"
+            android:parentActivityName="com.todo.liszt.todoliszt.ui.LoginActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.todo.liszt.todoliszt.ui.LoginActivity" />
+        </activity>
         <activity android:name=".ui.AddCatActivity" />
         <activity android:name=".ui.CatDetailActivity" />
-        <activity android:name=".ui.AddTaskActivity"/>
+        <activity android:name=".ui.AddTaskActivity" />
+        <activity android:name=".ui.MainActivity" />
     </application>
 
 </manifest>

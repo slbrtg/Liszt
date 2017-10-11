@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.Menu
 import android.view.View
 import android.widget.Button
 
@@ -17,6 +18,10 @@ import com.todo.liszt.todoliszt.adapters.FirebaseCatViewHolder
 import com.todo.liszt.todoliszt.models.Cat
 
 import butterknife.ButterKnife
+import com.google.firebase.auth.FirebaseAuth
+import android.view.MenuInflater
+import android.view.MenuItem
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -69,5 +74,28 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val intent = Intent(this@MainActivity, AddCatActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.getItemId()
+        if (id == R.id.action_logout) {
+            logout()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        val intent = Intent(this@MainActivity, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
