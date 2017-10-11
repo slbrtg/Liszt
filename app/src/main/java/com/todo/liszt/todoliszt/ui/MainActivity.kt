@@ -13,8 +13,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.todo.liszt.todoliszt.Constants
 import com.todo.liszt.todoliszt.R
-import com.todo.liszt.todoliszt.adapters.FirebaseCategoryViewHolder
-import com.todo.liszt.todoliszt.models.Category
+import com.todo.liszt.todoliszt.adapters.FirebaseCatViewHolder
+import com.todo.liszt.todoliszt.models.Cat
 
 import butterknife.ButterKnife
 
@@ -45,10 +45,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setUpFirebaseAdapter() {
-        mFirebaseAdapter = object : FirebaseRecyclerAdapter<Category, FirebaseCategoryViewHolder>(Category::class.java, R.layout
-                .category_list_grid_item,
-                FirebaseCategoryViewHolder::class.java, mCategoryReference) {
-            override fun populateViewHolder(viewHolder: FirebaseCategoryViewHolder, model: Category, position: Int) {
+        mFirebaseAdapter = object : FirebaseRecyclerAdapter<Cat, FirebaseCatViewHolder>(Cat::class.java, R.layout
+                .cat_list_grid_item,
+                FirebaseCatViewHolder::class.java, mCategoryReference) {
+            override fun populateViewHolder(viewHolder: FirebaseCatViewHolder, model: Cat, position: Int) {
                 viewHolder.bindCategory(model)
             }
         }
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view === mNewCategoryButton) {
-            val intent = Intent(this@MainActivity, AddCategoryActivity::class.java)
+            val intent = Intent(this@MainActivity, AddCatActivity::class.java)
             startActivity(intent)
         }
     }

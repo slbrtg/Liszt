@@ -3,15 +3,15 @@ package com.todo.liszt.todoliszt.models;
 import org.parceler.Parcel;
 
 @Parcel
-public class Category {
+public class Cat {
 
     String name;
     String description;
     String pushId;
 
-    public Category() { }
+    public Cat() { }
 
-    public Category(String name, String description, String pushId) {
+    public Cat(String name, String description, String pushId) {
         this.name = name;
         this.description = description;
         this.pushId = pushId;

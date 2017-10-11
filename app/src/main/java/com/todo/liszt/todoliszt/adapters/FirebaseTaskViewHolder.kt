@@ -19,10 +19,8 @@ import java.lang.reflect.Array
 import java.util.ArrayList
 
 class FirebaseTaskViewHolder(private val mView: View) : RecyclerView.ViewHolder(mView), View.OnClickListener {
-    private val mContext: Context = mView.context
     val categories = ArrayList<Task>()
-    val testString: String = "test"
-    val ref = FirebaseDatabase
+    private val ref = FirebaseDatabase
             .getInstance()
             .getReference(Constants.FIREBASE_CHILD_TASK)!!
 

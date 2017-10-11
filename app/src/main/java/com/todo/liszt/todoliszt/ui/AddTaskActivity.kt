@@ -11,17 +11,17 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.todo.liszt.todoliszt.Constants
 import com.todo.liszt.todoliszt.R
-import com.todo.liszt.todoliszt.models.Category
+import com.todo.liszt.todoliszt.models.Cat
 import com.todo.liszt.todoliszt.models.Task
 import org.parceler.Parcels
 
 
 class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mTaskReference: DatabaseReference
-    internal lateinit var mCat: Category
-    internal lateinit var mInputTaskNameEditText: EditText
-    internal lateinit var mInputTaskDescriptionEditText: EditText
-    internal lateinit var mAddNewTaskButton: Button
+    private lateinit var mCat: Cat
+    private lateinit var mInputTaskNameEditText: EditText
+    private lateinit var mInputTaskDescriptionEditText: EditText
+    private lateinit var mAddNewTaskButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -33,7 +33,7 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_task)
 
-        mCat = Parcels.unwrap<Category>(intent.getParcelableExtra<Parcelable>("category"))
+        mCat = Parcels.unwrap<Cat>(intent.getParcelableExtra<Parcelable>("cat"))
 
         mInputTaskNameEditText = findViewById(R.id.inputTaskNameEditText)
         mInputTaskDescriptionEditText = findViewById(R.id.inputTaskDescriptionEditText)
@@ -49,8 +49,8 @@ class AddTaskActivity : AppCompatActivity(), View.OnClickListener {
             val newTask = Task(name, description, mCat.pushId)
             saveTaskToFirebase(newTask)
 
-            val intent = Intent(this@AddTaskActivity, CategoryDetailActivity::class.java)
-            intent.putExtra("category", Parcels.wrap(mCat))
+            val intent = Intent(this@AddTaskActivity, CatDetailActivity::class.java)
+            intent.putExtra("cat", Parcels.wrap(mCat))
             startActivity(intent)
         }
     }
