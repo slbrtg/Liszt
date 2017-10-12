@@ -17,12 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CreateAccountActivity"
-            android:parentActivityName="com.todo.liszt.todoliszt.ui.LoginActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.todo.liszt.todoliszt.ui.LoginActivity" />
-        </activity>
+        <activity android:name=".ui.CreateAccountActivity" />
         <activity android:name=".ui.AddCatActivity" />
         <activity android:name=".ui.CatDetailActivity" />
         <activity android:name=".ui.AddTaskActivity" />
